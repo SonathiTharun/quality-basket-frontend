@@ -234,12 +234,16 @@
             </div>
         </div>
     </header>
-
-    <!-- Login Form -->
+    <!-- Signup Page -->
     <div class="auth-container">
         <div class="auth-card">
-            <h2 class="auth-title">Welcome Back!</h2>
+            <h2 class="auth-title">Create Account</h2>
             <form class="auth-form">
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name</label>
+                    <input class="form-input" type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+
                 <div class="form-group">
                     <label class="form-label" for="email">Email Address</label>
                     <input class="form-input" type="email" id="email" placeholder="Enter your email" required>
@@ -250,11 +254,12 @@
                     <input class="form-input" type="password" id="password" placeholder="••••••••" required>
                 </div>
 
-                <div class="forgot-password">
-                    <a href="#">Forgot Password?</a>
+                <div class="form-group">
+                    <label class="form-label" for="confirm-password">Confirm Password</label>
+                    <input class="form-input" type="password" id="confirm-password" placeholder="••••••••" required>
                 </div>
 
-                <button type="submit" class="auth-button">Sign In</button>
+                <button type="submit" class="auth-button">Create Account</button>
             </form>
 
             <div class="social-login">
@@ -268,7 +273,7 @@
                 </button>
             </div>
 
-            <p class="auth-alt">Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <p class="auth-alt">Already have an account? <a href="login.html">Sign In</a></p>
         </div>
     </div>
 </body>
