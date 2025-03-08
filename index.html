@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Basket - Home</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .search-section {
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        .search-bar {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: rgb(35, 31, 31);
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-button:hover {
+            background-color: #218838;
+        }
+
+        .ingredients-list {
+            margin: 20px auto;
+            text-align: left;
+            max-width: 600px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .ingredient-item {
+            margin-bottom: 10px;
+        }
+
+        .no-results {
+            color: red;
+        }
+
+        .store-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .store-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .store {
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .product-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product button {
+            padding: 8px 15px;
+            font-size: 14px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Menu Bar -->
+    <header>
+        <div class="logo">Quality Basket</div>
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="delivered.html">Delivered Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="cart.html" class="cart-link" aria-label="Basket">&#x1F9FA;</a>
+        </div>
+    </header>
+    <div class="promotions">
+        <br><br>
+        <center>
+            <h3>
+                <p class="sale">Big Sale on Groceries!</p>
+            </h3>
+        </center>
+        <center>
+            <h3>Fresh Fruits at Your Doorstep!</p>
+            </h3>
+        </center>
+        <center>
+            <h3>
+                <p class="sale">Exclusive Offers for Members!</p>
+            </h3>
+        </center>
+    </div>
+
+    <!-- Search Bar Section -->
+    <section class="search-section">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search for a dish..." />
+        <button class="search-button" onclick="searchDish()">Search</button>
+        <div id="ingredientsList" class="ingredients-list"></div>
+    </section>
+
+    <!-- Shop by Store Section -->
+    <section class="shop-by-store">
+        <h2>Shop by Store</h2>
+        <div class="store-grid">
+            <div class="store">
+                <img src="iamges/ss mar.webp" alt="SS Super Market" class="store-image">
+                <h3>SS Super Market</h3>
+                <p>Location: Downtown</p>
+                <a href="store.html?store=ss-super-market" class="store-link">Visit Store</a>
+            </div>
+            <div class="store">
+                <img src="iamges/organic mart.jpeg" alt="Organic Mart" class="store-image">
+                <h3>Organic Mart</h3>
+                <p>Location: Suburbs</p>
+                <a href="store1.html" class="store-link">Visit Store</a>
+            </div>
+            <div class="store">
+                <img src="iamges/freshbasket.jpeg" alt="Fresh Basket" class="store-image">
+                <h3>Fresh Basket</h3>
+                <p>Location: Uptown</p>
+                <a href="store2.html" class="store-link">Visit Store</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop by Category Section -->
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+            <div class="category">
+                <img src="iamges/groceries.jpg" alt="Groceries">
+                <h3>Groceries</h3>
+                <p>Stock up on pantry essentials, cereals, and more.</p>
+                <a href="category.html?category=groceries" class="category-link">Explore Groceries</a>
+            </div>
+            <div class="category">
+                <img src="iamges/dairy.jpg" alt="Dairy">
+                <h3>Dairy</h3>
+                <p>Fresh milk, cheese, and other dairy products.</p>
+                <a href="category.html?category=dairy" class="category-link">Shop Dairy</a>
+            </div>
+            <div class="category">
+                <img src="iamges/fruits.jpg" alt="Fruits">
+                <h3>Fruits</h3>
+                <p>Fresh, seasonal, and organic fruits.</p>
+                <a href="category.html?category=fruits" class="category-link">Discover Fruits</a>
+            </div>
+            <div class="category">
+                <img src="iamges/snacks.jpg" alt="Snacks">
+                <h3>Snacks</h3>
+                <p>Your favorite chips, cookies, and treats.</p>
+                <a href="category.html?category=snacks" class="category-link">Browse Snacks</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="iamges/Fresh Apples.jpeg" alt="Fresh Apples" class="product-image">
+                <h3>Fresh Apples</h3>
+                <p>$5.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="iamges/Organic Milk.webp" alt="Organic Milk" class="product-image">
+                <h3>Organic Milk</h3>
+                <p>$3.49</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Quality Basket. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        async function searchDish() {
+            const searchInput = document.getElementById("searchInput").value.trim();
+            const ingredientsList = document.getElementById("ingredientsList");
+
+            ingredientsList.innerHTML = "";
+
+            if (searchInput === "") {
+                ingredientsList.innerHTML = "<p class='no-results'>Please enter a dish name to search.</p>";
+                return;
+            }
+
+            const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(searchInput)}`;
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.meals) {
+                    const meal = data.meals[0];
+                    ingredientsList.innerHTML = `<strong>Ingredients needed for ${meal.strMeal}:</strong>`;
+                    const ul = document.createElement("ul");
+
+                    for (let i = 1; i <= 20; i++) {
+                        const ingredient = meal[`strIngredient${i}`];
+                        const measure = meal[`strMeasure${i}`];
+
+                        if (ingredient && ingredient.trim() !== "") {
+                            const li = document.createElement("li");
+                            li.className = "ingredient-item";
+                            li.innerText = `${ingredient} - ${measure || "as needed"}`;
+                            ul.appendChild(li);
+                        }
+                    }
+
+                    ingredientsList.appendChild(ul);
+                } else {
+                    ingredientsList.innerHTML = "<p class='no-results'>Dish not found. Please try another.</p>";
+                }
+            } catch (error) {
+                ingredientsList.innerHTML = "<p class='no-results'>There was an error fetching the dish. Please try again later.</p>";
+            }
+        }
+
+    </script>
+    <script>
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+            // Update the cart link text with the cart count
+            document.querySelector('.cart-link').textContent = `🛒 (${totalCount})`;
+        }
+
+        // Update cart count on page load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+
+</body>
+
+</html>

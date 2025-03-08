@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saikirana Shop</title>
+    <link rel="stylesheet" href="styles/store.css">
+    <style>
+        /* Styles for the welcome animation */
+        .welcome-container {
+            text-align: center;
+            margin: 50px auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* Styles for the grocery grid */
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px;
+        }
+
+        .grocery-list {
+            flex: 3;
+            margin-right: 20px;
+        }
+
+        .grocery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .grocery-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .grocery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .grocery-item h3 {
+            margin: 10px 0;
+        }
+
+        .grocery-item p {
+            color: #888;
+        }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            margin: 10px 0;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        /* Styles for location info */
+        .location-info {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .location-info h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .location-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .location-link {
+            color: #007BFF;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .location-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Welcome Section -->
+    <div class="welcome-container">
+        <p class="welcome-message">WELCOME TO THE STORE</p>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-container">
+        <!-- Grocery List -->
+        <section class="grocery-list">
+            <h2 style="text-align: center;">Available Groceries</h2>
+            <div class="grocery-grid">
+                <!-- Chill Powder -->
+                <div class="grocery-item">
+                    <img src="iamges/chill_powder.jpg" alt="Chill Powder">
+                    <h3>Chill Powder</h3>
+                    <p>Price: ₹250/kg</p>
+                    <input type="number" class="quantity-input" id="chill-powder-quantity" min="1" max="100" value="1">
+                    <button class="add-to-cart" data-item="Chill Powder" data-price="250">Add to Cart</button>
+                </div>
+
+                <!-- Chocolates -->
+                <div class="grocery-item">
+                    <img src="iamges/chocolates.jpg" alt="Chocolates">
+                    <h3>Chocolates</h3>
+                    <p>Price: ₹50/pack</p>
+                    <input type="number" class="quantity-input" id="chocolates-quantity" min="1" max="100" value="1">
+                    <button class="add-to-cart" data-item="Chocolates" data-price="50">Add to Cart</button>
+                </div>
+
+                <!-- Turmeric Powder -->
+                <div class="grocery-item">
+                    <img src="iamges/turmeric_powder.jpg" alt="Turmeric Powder">
+                    <h3>Turmeric Powder</h3>
+                    <p>Price: ₹150/kg</p>
+                    <input type="number" class="quantity-input" id="turmeric-powder-quantity" min="1" max="100"
+                        value="1">
+                    <button class="add-to-cart" data-item="Turmeric Powder" data-price="150">Add to Cart</button>
+                </div>
+
+                <!-- Garam Masala -->
+                <div class="grocery-item">
+                    <img src="iamges/garam_masala.jpg" alt="Garam Masala">
+                    <h3>Garam Masala</h3>
+                    <p>Price: ₹300/kg</p>
+                    <input type="number" class="quantity-input" id="garam-masala-quantity" min="1" max="100" value="1">
+                    <button class="add-to-cart" data-item="Garam Masala" data-price="300">Add to Cart</button>
+                </div>
+
+                <!-- Salt -->
+                <div class="grocery-item">
+                    <img src="iamges/salt.jpg" alt="Salt">
+                    <h3>Salt</h3>
+                    <p>Price: ₹25/kg</p>
+                    <input type="number" class="quantity-input" id="salt-quantity" min="1" max="100" value="1">
+                    <button class="add-to-cart" data-item="Salt" data-price="25">Add to Cart</button>
+                </div>
+
+                <!-- Add remaining items similarly -->
+
+            </div>
+        </section>
+
+        <!-- Location Info -->
+        <aside class="location-info">
+            <h3>Shop Holder</h3>
+            <p>srinuvas</p>
+            <h3>Store Location</h3>
+            <p>
+                <a class="location-link" href="https://maps.app.goo.gl/67AfuoYXjYDwyYas9" target="_blank">View on
+                    map</a>
+            </p>
+            <p>Pin Code: 500034</p>
+            <p>Latitude: 17.4546544</p>
+            <p>Longitude: 52.565414</p>
+            <p>Phone: 7826569995</p>
+        </aside>
+    </div>
+
+    <script>
+        // Add interactivity for 'Add to Cart' buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.getAttribute('data-item');
+                const price = parseFloat(button.getAttribute('data-price')); // Ensure price is a number
+                const quantityElement = button.previousElementSibling;
+                const quantity = parseInt(quantityElement.value, 10); // Ensure quantity is an integer
+
+                // Validate quantity
+                if (isNaN(quantity) || quantity <= 0) {
+                    alert('Please enter a valid quantity!');
+                    return;
+                }
+
+                // Add item to the cart
+                const cartItem = { item, price, quantity };
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                // Check if the item already exists in the cart
+                const existingItemIndex = cart.findIndex(cartEntry => cartEntry.item === item);
+                if (existingItemIndex >= 0) {
+                    // Update quantity if item already exists
+                    cart[existingItemIndex].quantity += quantity;
+                } else {
+                    // Add new item to the cart
+                    cart.push(cartItem);
+                }
+
+                // Save updated cart back to LocalStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Display success message
+                alert(`${quantity} units of ${item} added to cart for ₹${quantity * price}!`);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+/* Add a cart icon to the top-right of the header */
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#cart-link {
+    position: relative;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+.cart-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
